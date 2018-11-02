@@ -1,0 +1,11 @@
+royecto_final.out: modulo1.o Pro4.o
+	gcc -Wall -g -o proyecto_final.out funciones_juego.o funciones_juego_1.o `pkg-config --cflags --clibs gtk+-2.0`
+
+funciones_juego.o: funciones_juego.c
+	gcc -g -c funciones_juego.c `pkg-config --cflags gtk+-2.0`
+
+funciones_juego.o: funciones_juego_1.c
+	gcc -g -c funciones_juego_1.c `pkg-config --cflags gtk+-2.0`
+
+Clean: 
+	rm*.o
